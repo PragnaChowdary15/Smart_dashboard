@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+      <li>Tasks</li>
+      <li>Weather</li>
+      <li>Notes</li>
+      <li>Settings</li>
+    </ul>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <span id="clock"></span>
+      <button id="darkToggle">DarkMode
+
+      </button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="maincontent">
+
+      <h1>Tasks</h1>
+
+      <p id="count">Total Tasks:</p>
+      <p id="stats"></p>
+
+      <progress id="progress" value="0" max="100"></progress>
+    
+      <!-- SEARCH -->
+      <input type="text" id="search" placeholder="Search tasks...">
+
+      <!-- FILTERS -->
+      <div class="filters">
+        <button onclick="showAll()">All</button>
+        <button onclick="showCompleted()">Completed</button>
+        <button onclick="showPending()">Pending</button>
+      </div>
+
+      <!-- TASK INPUT -->
+      <div class="task-input-card">
+      <input type="text" id="taskInput" placeholder="Enter task">
+      <select id="priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <input type="date" id="dueDate">
+
+      <button id="addBtn">Add</button>
+
+      <!-- TASK LIST -->
+      <div class="task-list"></div>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

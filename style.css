@@ -1,0 +1,197 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+/* ----- SIDEBAR ----- */
+.sidebar {
+  width: 190px;
+  background: #1e1e2f;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background: #3b3b5c;
+}
+
+/* ----- MAIN LAYOUT ----- */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: 50px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  padding: 0 10px;
+}
+
+/* ----- MAIN CONTENT ----- */
+.maincontent {
+  background: #f4f6fb;
+  min-height: 100%;
+  padding: 20px;
+}
+
+input {
+  padding: 8px;
+  width: 200px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* ----- FILTERS ----- */
+.filters button {
+  background: #c4c9c8;
+  border: none;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+
+/* ----- TASK INPUT CARD ----- */
+.task-input-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: inline-flex;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.task-input-card input,
+.task-input-card select {
+  width: 140px;
+  height: 34px;
+  font-size: 14px;
+}
+
+
+/* ----- TASK CARD ----- */
+.task-list div {
+  background: white;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.task-list div:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
+.task-list button {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+}
+
+/* ----- PRIORITY LABELS ----- */
+.high::before {
+  content: "HIGH";
+  color: red;
+  margin-right: 6px;
+}
+
+.medium::before {
+  content: "MED";
+  color: orange;
+  margin-right: 6px;
+}
+
+.low::before {
+  content: "LOW";
+  color: green;
+  margin-right: 6px;
+}
+
+/* ----- CLOCK ----- */
+#clock {
+  float: right;
+  padding: 12px;
+  font-weight: bold;
+}
+
+/* ----- DARK MODE ----- */
+body.dark {
+  background: #1e1e2f;
+  color: white;
+}
+
+body.dark .maincontent {
+  background: #2d2d44;
+  color: white;
+}
+
+body.dark .task-list div {
+  background: #2d2d44;
+  color: white;
+}
+
+/* ----- DARK BUTTON ----- */
+#darkToggle {
+  float: right;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* ----- SEARCH ----- */
+#search {
+  padding: 8px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+/* ----- HEADER CARD ----- */
+.maincontent h1 {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: inline-block;
+}
