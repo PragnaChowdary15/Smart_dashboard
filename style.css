@@ -1,0 +1,385 @@
+/* ----- GLOBAL ----- */
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  transition: 0.3s;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+/* ----- SIDEBAR ----- */
+.sidebar {
+  width: 190px;
+  background: #1e1e2f;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background: #3b3b5c;
+}
+
+/* ----- MAIN LAYOUT ----- */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: 50px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  padding: 0 10px;
+}
+
+/* ----- MAIN CONTENT ----- */
+.maincontent {
+  background: #ecebe9;
+  min-height: 100%;
+  padding: 20px;
+}
+
+input {
+  padding: 8px;
+  width: 200px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* ----- FILTERS ----- */
+.filters button {
+  background: #c4c9c8;
+  border: none;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+/* ===== DASHBOARD ROW ===== */
+.dashboard-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 15px;
+}
+
+/* ----- TASK INPUT CARD ----- */
+.task-input-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition:0.3s;
+}
+
+.task-input-card input,
+.task-input-card select {
+  width: 140px;
+  height: 34px;
+  font-size: 14px;
+}
+
+/* ----- TASK CARD ----- */
+.task-list div {
+  background: white;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.task-list div:hover {
+  transform: scale(1.02);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
+.task-list button {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+}
+
+/* ----- PRIORITY LABELS ----- */
+.high::before { content: "HIGH"; color: red; margin-right: 6px; }
+.medium::before { content: "MED"; color: orange; margin-right: 6px; }
+.low::before { content: "LOW"; color: green; margin-right: 6px; }
+
+/* ----- WEATHER CARD ----- */
+.weather-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  width: 250px;
+  min-height: 160px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.weather-card h2 {
+  margin-top: 0;
+}
+
+.weather-card input {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.weather-card button {
+  width: 100%;
+  background: #495eb4;
+  color: white;
+  border: none;
+  margin-left: 0;
+}
+
+/* ----- CLOCK ----- */
+#clock {
+  float: right;
+  padding: 12px;
+  font-weight: bold;
+}
+
+/* ----- DARK MODE ----- */
+body.dark {
+  background: #1e1e2f;
+  color: white;
+}
+
+body.dark .maincontent {
+  background: #2d2d44;
+}
+
+body.dark .topbar{
+  background:#2d2d44;
+  color:white;
+}
+
+body.dark .task-list div,
+body.dark .task-input-card,
+body.dark .weather-card,
+body.dark .notes-card,
+body.dark .note-item {
+  background:#2d2d44;
+  color:white;
+}
+
+body.dark input,
+body.dark select{
+  background:#3b3b5c;
+  color:white;
+  border:none;
+}
+
+body.dark .filters button{
+  background:#3b3b5c;
+  color:white;
+}
+
+body.dark .maincontent h1{
+  background:#3b3b5c;
+  color:white;
+}
+
+/* ----- DARK BUTTON ----- */
+#darkToggle {
+  float: right;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* ----- SEARCH ----- */
+#search {
+  padding: 8px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+/* ----- HEADER CARD ----- */
+.maincontent h1 {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: inline-block;
+  transition:0.3s;
+}
+
+/* ---------- NOTES ---------- */
+.notes-card{
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  transition:0.3s;
+}
+
+#noteInput{
+  padding: 8px;
+  flex: 1;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#addNoteBtn{
+  background:#3b82f6;
+  color:white;
+  border:none;
+  border-radius:6px;
+}
+
+#notesList{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.note-item{
+  background:white;
+  padding:12px;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.note-item:hover{
+  transform:scale(1.02);
+}
+body.dark button{
+  background:#f4e9d8;
+  color:#1e1e2f;
+  border:none;
+}
+
+body.dark #addBtn{
+  background:#f4e9d8;
+  color:#1e1e2f;
+}
+
+/* ----- PIE CHART SIZE FIX ----- */
+.chart-box{
+  width:220px;
+  height:220px;
+  margin-top:15px;
+}
+
+.chart-box canvas{
+  width:100% !important;
+  height:100% !important;
+}
+
+.login-body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background #ecebe9;
+
+}
+.login-card
+{
+  background: white;
+  -webkit-padding-start: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 260px;
+}
+.login-card input{
+  width: 100%
+  box-sizing: border-box;
+}
+.login-card button{
+  width: 100%;
+  margin-left:0;
+}
+/* SETTINGS SECTION */
+#settingsSection {
+    padding: 40px;
+}
+
+.settings-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 450px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.settings-card h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.settings-card label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.settings-card input[type="number"] {
+    width: 100px;
+    padding: 5px;
+}
+
+.settings-card button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #54426a;   /* Your theme color */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.settings-card button:hover {
+    opacity: 0.85;
+}

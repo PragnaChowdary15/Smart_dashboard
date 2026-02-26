@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h2>Dashboard</h2>
+<ul>
+<li onclick="showSection('tasksSection')">Tasks</li>
+<li onclick="showSection('weatherSection')">Weather</li>
+<li onclick="showSection('notesSection')">Notes</li>
+<li onclick="showSection('settingsSection')">Settings</li>
+</ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="topbar">
+<span id="clock"></span>
+<button id="darkToggle">DarkMode</button>
+</div>
+
+<div class="maincontent">
+
+<!-- ================= TASKS ================= -->
+<div id="tasksSection">
+
+<h1>Tasks</h1>
+
+<p id="count">Total Tasks:</p>
+<p id="stats"></p>
+
+<progress id="progress" value="0" max="100"></progress>
+<div class="chart-box">
+  <canvas id="taskChart"></canvas>
+</div>
+<input type="text" id="search" placeholder="Search tasks...">
+
+<div class="filters">
+<button onclick="showAll()">All</button>
+<button onclick="showCompleted()">Completed</button>
+<button onclick="showPending()">Pending</button>
+</div>
+
+<div class="dashboard-row">
+
+<div class="task-input-card">
+<input type="text" id="taskInput" placeholder="Enter task">
+
+<select id="priority">
+<option value="low">Low</option>
+<option value="medium">Medium</option>
+<option value="high">High</option>
+</select>
+
+<input type="date" id="dueDate">
+
+<button id="addBtn">Add</button>
+</div>
+
+</div>
+
+<div class="task-list"></div>
+
+</div>
+
+
+<!-- ================= WEATHER ================= -->
+<div id="weatherSection" style="display:none;">
+
+<h1>Weather</h1>
+
+<div class="weather-card">
+<input type="text" id="cityInput" placeholder="Enter city">
+<button id="getWeatherBtn">Get Weather</button>
+<p id="weatherResult">Enter a city to see weather</p>
+</div>
+
+</div>
+
+
+<!-- ================= NOTES ================= -->
+<div id="notesSection" style="display:none;">
+
+<h1>Notes</h1>
+
+<div class="notes-card">
+<input type="text" id="noteInput" placeholder="Write a note">
+<button id="addNoteBtn">Add Note</button>
+</div>
+
+<div id="notesList"></div>
+
+</div>
+<!--SETTINGS-->
+<div id = "settingsSection" style = "display:none;">
+  <h1>Settings</h1>
+  <div class ="settings-card">
+    <h3>Appearence</h3>
+    <label>
+      <input type = "checkbox" id ="darkModeSetting">
+      Enable Dark mode
+    </label>
+    <h3>Dashboard</h3>
+    <label>
+      Auto Refresh (seconds):
+      <input type = "number" id = "refershSetting" value = "30">
+    </label>
+    <button onclick="saveSettings()">Save Settings</button>
+
+  </div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
