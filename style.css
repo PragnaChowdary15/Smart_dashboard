@@ -1,385 +1,538 @@
-/* ----- GLOBAL ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
 body {
-  margin: 0;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  transition: 0.3s;
+    background: #f0f2f5;
 }
 
 .wrapper {
-  display: flex;
-  height: 100vh;
+    display: flex;
+    min-height: 100vh;
 }
 
-/* ----- SIDEBAR ----- */
+/* Sidebar Styles */
 .sidebar {
-  width: 190px;
-  background: #1e1e2f;
-  color: white;
-  padding: 20px;
+    width: 250px;
+    background: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
 .sidebar h2 {
-  margin: 0;
-  font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #667eea;
 }
 
 .sidebar ul {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 20px;
+    list-style: none;
 }
 
 .sidebar li {
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  cursor: pointer;
+    padding: 12px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #555;
 }
 
 .sidebar li:hover {
-  background: #3b3b5c;
+    background: #667eea;
+    color: white;
 }
 
-/* ----- MAIN LAYOUT ----- */
+/* Main Content Styles */
 .main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+    flex: 1;
+    padding: 20px;
 }
 
 .topbar {
-  height: 50px;
-  background: white;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* ----- MAIN CONTENT ----- */
+#clock {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #667eea;
+}
+
+#darkToggle {
+    padding: 8px 16px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#darkToggle:hover {
+    background: #764ba2;
+}
+
 .maincontent {
-  background: #ecebe9;
-  min-height: 100%;
-  padding: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    min-height: calc(100vh - 120px);
 }
 
-input {
-  padding: 8px;
-  width: 200px;
+/* Tasks Section */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8em;
 }
 
-button {
-  padding: 8px 12px;
-  margin-left: 5px;
-  cursor: pointer;
+#count, #stats {
+    color: #666;
+    margin: 10px 0;
+    font-size: 1.1em;
 }
 
-/* ----- FILTERS ----- */
+#progress {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+#progress::-webkit-progress-bar {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+#progress::-webkit-progress-value {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 10px;
+}
+
+.chart-box {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+#taskChart {
+    width: 100%;
+    height: auto;
+}
+
+#search {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+#search:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
 .filters button {
-  background: #c4c9c8;
-  border: none;
-  border-radius: 10px;
-  margin: 5px;
+    flex: 1;
+    padding: 10px;
+    background: #f0f2f5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
 }
 
-/* ===== DASHBOARD ROW ===== */
-.dashboard-row {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  margin-top: 15px;
+.filters button:hover {
+    background: #667eea;
+    color: white;
 }
 
-/* ----- TASK INPUT CARD ----- */
 .task-input-card {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  transition:0.3s;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.task-input-card input,
-.task-input-card select {
-  width: 140px;
-  height: 34px;
-  font-size: 14px;
+#taskInput {
+    flex: 2;
+    min-width: 200px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
-/* ----- TASK CARD ----- */
+#priority {
+    flex: 1;
+    min-width: 100px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    background: white;
+}
+
+#dueDate {
+    flex: 1;
+    min-width: 150px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+#addBtn {
+    padding: 12px 24px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+#addBtn:hover {
+    background: #764ba2;
+}
+
+.task-list {
+    margin-top: 20px;
+}
+
 .task-list div {
-  background: white;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 8px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition:0.3s;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid transparent;
+    transition: transform 0.2s;
 }
 
 .task-list div:hover {
-  transform: scale(1.02);
+    transform: translateX(5px);
 }
 
-.completed {
-  text-decoration: line-through;
-  color: gray;
-  opacity: 0.7;
+.task-list div.low {
+    border-left-color: #00C851;
+}
+
+.task-list div.medium {
+    border-left-color: #ffbb33;
+}
+
+.task-list div.high {
+    border-left-color: #ff4444;
+}
+
+.task-list div.overdue {
+    border-left-color: #ff4444;
+    background: #ffeeee;
+}
+
+.task-list span {
+    flex: 1;
+    cursor: pointer;
+}
+
+.task-list span.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
 }
 
 .task-list button {
-  border: none;
-  background: transparent;
-  font-size: 18px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
 }
 
-/* ----- PRIORITY LABELS ----- */
-.high::before { content: "HIGH"; color: red; margin-right: 6px; }
-.medium::before { content: "MED"; color: orange; margin-right: 6px; }
-.low::before { content: "LOW"; color: green; margin-right: 6px; }
+.task-list button:hover {
+    opacity: 1;
+}
 
-/* ----- WEATHER CARD ----- */
+/* Weather Section */
 .weather-card {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  width: 250px;
-  min-height: 160px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-
-.weather-card h2 {
-  margin-top: 0;
-}
-
-.weather-card input {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.weather-card button {
-  width: 100%;
-  background: #495eb4;
-  color: white;
-  border: none;
-  margin-left: 0;
-}
-
-/* ----- CLOCK ----- */
-#clock {
-  float: right;
-  padding: 12px;
-  font-weight: bold;
-}
-
-/* ----- DARK MODE ----- */
-body.dark {
-  background: #1e1e2f;
-  color: white;
-}
-
-body.dark .maincontent {
-  background: #2d2d44;
-}
-
-body.dark .topbar{
-  background:#2d2d44;
-  color:white;
-}
-
-body.dark .task-list div,
-body.dark .task-input-card,
-body.dark .weather-card,
-body.dark .notes-card,
-body.dark .note-item {
-  background:#2d2d44;
-  color:white;
-}
-
-body.dark input,
-body.dark select{
-  background:#3b3b5c;
-  color:white;
-  border:none;
-}
-
-body.dark .filters button{
-  background:#3b3b5c;
-  color:white;
-}
-
-body.dark .maincontent h1{
-  background:#3b3b5c;
-  color:white;
-}
-
-/* ----- DARK BUTTON ----- */
-#darkToggle {
-  float: right;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-/* ----- SEARCH ----- */
-#search {
-  padding: 8px;
-  width: 200px;
-  margin-bottom: 10px;
-}
-
-/* ----- HEADER CARD ----- */
-.maincontent h1 {
-  background: white;
-  padding: 12px 16px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  display: inline-block;
-  transition:0.3s;
-}
-
-/* ---------- NOTES ---------- */
-.notes-card{
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-  transition:0.3s;
-}
-
-#noteInput{
-  padding: 8px;
-  flex: 1;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-#addNoteBtn{
-  background:#3b82f6;
-  color:white;
-  border:none;
-  border-radius:6px;
-}
-
-#notesList{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.note-item{
-  background:white;
-  padding:12px;
-  border-radius:10px;
-  cursor:pointer;
-  box-shadow:0 2px 5px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-
-.note-item:hover{
-  transform:scale(1.02);
-}
-body.dark button{
-  background:#f4e9d8;
-  color:#1e1e2f;
-  border:none;
-}
-
-body.dark #addBtn{
-  background:#f4e9d8;
-  color:#1e1e2f;
-}
-
-/* ----- PIE CHART SIZE FIX ----- */
-.chart-box{
-  width:220px;
-  height:220px;
-  margin-top:15px;
-}
-
-.chart-box canvas{
-  width:100% !important;
-  height:100% !important;
-}
-
-.login-body
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background #ecebe9;
-
-}
-.login-card
-{
-  background: white;
-  -webkit-padding-start: 30px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 260px;
-}
-.login-card input{
-  width: 100%
-  box-sizing: border-box;
-}
-.login-card button{
-  width: 100%;
-  margin-left:0;
-}
-/* SETTINGS SECTION */
-#settingsSection {
-    padding: 40px;
-}
-
-.settings-card {
-    background: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
     padding: 30px;
     border-radius: 15px;
-    width: 450px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+#cityInput {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#getWeatherBtn {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 10px 0;
+    transition: background 0.3s;
+}
+
+#getWeatherBtn:hover {
+    background: #f0f0f0;
+}
+
+#weatherResult {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+#weatherResult img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Notes Section */
+.notes-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+#noteInput {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#addNoteBtn {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+#addNoteBtn:hover {
+    background: #764ba2;
+}
+
+#notesList {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.note-item {
+    background: #fff3cd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-left: 4px solid #ffc107;
+}
+
+.note-item:hover {
+    transform: translateX(5px);
+}
+
+/* Settings Section */
+.settings-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
 }
 
 .settings-card h3 {
-    margin-top: 20px;
-    margin-bottom: 15px;
+    color: #333;
+    margin: 20px 0 10px 0;
 }
 
 .settings-card label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
+    display: block;
+    margin: 15px 0;
+    color: #666;
+}
+
+.settings-card input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
 }
 
 .settings-card input[type="number"] {
-    width: 100px;
-    padding: 5px;
+    width: 80px;
+    padding: 8px;
+    margin-left: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
 }
 
 .settings-card button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    background: #54426a;   /* Your theme color */
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
     color: white;
-    border-radius: 8px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
+    font-weight: 500;
+    margin-top: 20px;
+    transition: background 0.3s;
 }
 
 .settings-card button:hover {
-    opacity: 0.85;
+    background: #764ba2;
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background: #1a1a1a;
+}
+
+body.dark .sidebar {
+    background: #2d2d2d;
+    color: white;
+}
+
+body.dark .sidebar h2 {
+    color: white;
+    border-bottom-color: #667eea;
+}
+
+body.dark .sidebar li {
+    color: #ddd;
+}
+
+body.dark .topbar {
+    background: #2d2d2d;
+    color: white;
+}
+
+body.dark .maincontent {
+    background: #2d2d2d;
+    color: white;
+}
+
+body.dark h1 {
+    color: white;
+}
+
+body.dark #count, body.dark #stats {
+    color: #ddd;
+}
+
+body.dark .chart-box {
+    background: #3d3d3d;
+}
+
+body.dark .task-input-card {
+    background: #3d3d3d;
+}
+
+body.dark .task-list div {
+    background: #3d3d3d;
+    color: white;
+    border: 1px solid #444;
+}
+
+body.dark .task-list div.overdue {
+    background: #442222;
+}
+
+body.dark .notes-card {
+    background: #3d3d3d;
+}
+
+body.dark .settings-card {
+    background: #3d3d3d;
+    color: white;
+}
+
+body.dark .settings-card h3 {
+    color: white;
+}
+
+body.dark .settings-card label {
+    color: #ddd;
+}
+
+body.dark #search,
+body.dark #taskInput,
+body.dark #priority,
+body.dark #dueDate,
+body.dark #noteInput,
+body.dark #cityInput,
+body.dark .settings-card input[type="number"] {
+    background: #3d3d3d;
+    border-color: #555;
+    color: white;
+}
+
+body.dark #search::placeholder,
+body.dark #taskInput::placeholder,
+body.dark #noteInput::placeholder,
+body.dark #cityInput::placeholder {
+    color: #999;
+}
+
+body.dark .filters button {
+    background: #3d3d3d;
+    color: white;
+}
+
+body.dark .note-item {
+    background: #665d3e;
+    color: white;
+    border-left-color: #ffc107;
 }
