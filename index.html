@@ -6,6 +6,9 @@
     <title>Smart Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    
 </head>
 <body>
     <div class="wrapper">
@@ -16,6 +19,7 @@
                 <li onclick="showSection('tasksSection')">✅ Tasks</li>
                 <li onclick="showSection('weatherSection')">🌤️ Weather</li>
                 <li onclick="showSection('notesSection')">📝 Notes</li>
+                <li onclick="showSection('pomodoroSection')">🍅 Pomodoro</li>
                 <li onclick="showSection('settingsSection')">⚙️ Settings</li>
             </ul>
         </div>
@@ -28,6 +32,7 @@
             </div>
 
             <div class="maincontent">
+                
                 <!-- ================= TASKS ================= -->
                 <div id="tasksSection">
                     <h1>✅ Task Manager</h1>
@@ -38,6 +43,7 @@
                     <progress id="progress" value="0" max="100"></progress>
                     
                     <div class="chart-box">
+                        <h3>📊 Task Progress</h3>
                         <canvas id="taskChart"></canvas>
                     </div>
                     
@@ -86,6 +92,71 @@
                     <small style="color: #999; display: block; text-align: center;">Click on a note to delete it</small>
                 </div>
 
+                <!-- ================= POMODORO TIMER ================= -->
+<div id="pomodoroSection" style="display:none;">
+    <h1>🍅 Pomodoro Timer</h1>
+    <div class="pomodoro-card">
+        <!-- Session Type -->
+        <div class="timer-mode-badge" id="sessionType">Work Session</div>
+        
+        <!-- Progress Bar -->
+        <div class="pomodoro-progress">
+            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+        
+        <!-- Timer Display -->
+        <div class="timer-display" id="timer">25:00</div>
+        
+        <!-- Timer Controls -->
+        <div class="timer-controls">
+            <button id="startTimer" class="start-btn">▶Start</button>
+            <button id="pauseTimer" class="pause-btn">⏸ Pause</button>
+            <button id="resetTimer" class="reset-btn">↺ Reset</button>
+        </div>
+        
+        <!-- Timer Modes -->
+        <div class="timer-modes">
+            <button class="mode-btn active" data-mode="pomodoro">🍅 Work</button>
+            <button class="mode-btn" data-mode="short">☕ Short Break</button>
+            <button class="mode-btn" data-mode="long">🌙 Long Break</button>
+        </div>
+        
+        <!-- Task Selection -->
+        <div class="task-selector">
+            <label for="pomodoroTaskSelect">📋 Select a Task (Optional)</label>
+            <select id="pomodoroTaskSelect" class="task-dropdown">
+                <option value="">No task selected</option>
+                <!-- Tasks will be populated here from your task list -->
+            </select>
+        </div>
+        
+        <!-- Current Focus (shows when task selected) -->
+        <div id="currentFocus" class="current-focus" style="display: none;">
+            <span>Focusing on:</span>
+            <strong id="selectedTaskName"></strong>
+        </div>
+        
+        <!-- Pomodoro Stats -->
+        <div class="pomodoro-stats">
+            <div class="stat-item">
+                <div class="stat-label">Today</div>
+                <div class="stat-value" id="todayPomodoros">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Week</div>
+                <div class="stat-value" id="weekPomodoros">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Total</div>
+                <div class="stat-value" id="totalPomodoros">0</div>
+            </div>
+        </div>
+        
+        <!-- Timer Status Message -->
+        <p id="timerStatus" class="timer-status">Ready to focus! 🎯</p>
+    </div>
+</div>
+
                 <!-- ================= SETTINGS ================= -->
                 <div id="settingsSection" style="display:none;">
                     <h1>⚙️ Settings</h1>
@@ -99,15 +170,53 @@
                         <h3>Dashboard</h3>
                         <label>
                             Auto Refresh (seconds):
-                            <input type="number" id="refershSetting" value="30" min="5" max="300">
+                            <input type="number" id="refreshSetting" value="30" min="5" max="300">
                         </label>
                         
                         <button onclick="saveSettings()">💾 Save Settings</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+
+                <!-- ================= CALENDAR ================= -->
+                <div id="calendarSection" style="display:none;">
+                    <h1>📅 Calendar</h1>
+                    <div class="calendar-card">
+                        <div class="calendar-header">
+                            <button id="prevMonth">←</button>
+                            <h2 id="currentMonth"></h2>
+                            <button id="nextMonth">→</button>
+                        </div>
+                        <div class="calendar-grid" id="calendarGrid"></div>
+                        <div class="calendar-tasks" id="calendarTasks"></div>
+                    </div>
+                </div>
+
+                <!-- ================= ANALYTICS ================= -->
+                <div id="analyticsSection" style="display:none;">
+                    <h1>📊 Analytics</h1>
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <h3>Completion Rate</h3>
+                            <canvas id="completionChart"></canvas>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Priority Distribution</h3>
+                            <canvas id="priorityChart"></canvas>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Weekly Activity</h3>
+                            <canvas id="weeklyChart"></canvas>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Productivity Score</h3>
+                            <div class="score-display" id="productivityScore">85%</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>  <!-- Close maincontent -->
+        </div>  <!-- Close main -->
+    </div>  <!-- Close wrapper -->
 
     <script src="script.js"></script>
 </body>
