@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,6 +81,10 @@
 </body>
 </html>
 =======
+=======
+
+<head>
+>>>>>>> d4d9fd7 (Changes)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Dashboard</title>
@@ -87,8 +92,13 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#667eea">
+<<<<<<< HEAD
     
 </head>
+=======
+</head>
+
+>>>>>>> d4d9fd7 (Changes)
 <body>
     <div class="wrapper">
         <!-- SIDEBAR -->
@@ -99,6 +109,12 @@
                 <li onclick="showSection('weatherSection')">🌤️ Weather</li>
                 <li onclick="showSection('notesSection')">📝 Notes</li>
                 <li onclick="showSection('pomodoroSection')">🍅 Pomodoro</li>
+<<<<<<< HEAD
+=======
+                <li onclick="showSection('affirmationsSection')">✨ Affirmations</li>
+                <li onclick="showSection('calendarSection')">📅 Calendar</li>
+                <li onclick="showSection('analyticsSection')">📊 Analytics</li>
+>>>>>>> d4d9fd7 (Changes)
                 <li onclick="showSection('settingsSection')">⚙️ Settings</li>
             </ul>
         </div>
@@ -111,6 +127,7 @@
             </div>
 
             <div class="maincontent">
+<<<<<<< HEAD
                 
                 <!-- ================= TASKS ================= -->
                 <div id="tasksSection">
@@ -121,19 +138,40 @@
                     
                     <progress id="progress" value="0" max="100"></progress>
                     
+=======
+                <!-- ================= TASKS ================= -->
+                <div id="tasksSection">
+                    <h1>✅ Task Manager</h1>
+
+                    <p id="count">Total Tasks: 0</p>
+                    <p id="stats">Total: 0 | Completed: 0 | Pending: 0</p>
+
+                    <progress id="progress" value="0" max="100"></progress>
+
+>>>>>>> d4d9fd7 (Changes)
                     <div class="chart-box">
                         <h3>📊 Task Progress</h3>
                         <canvas id="taskChart"></canvas>
                     </div>
+<<<<<<< HEAD
                     
                     <input type="text" id="search" placeholder="🔍 Search tasks...">
                     
+=======
+
+                    <input type="text" id="search" placeholder="🔍 Search tasks...">
+
+>>>>>>> d4d9fd7 (Changes)
                     <div class="filters">
                         <button onclick="showAll()">All</button>
                         <button onclick="showCompleted()">Completed</button>
                         <button onclick="showPending()">Pending</button>
                     </div>
+<<<<<<< HEAD
                     
+=======
+
+>>>>>>> d4d9fd7 (Changes)
                     <div class="dashboard-row">
                         <div class="task-input-card">
                             <input type="text" id="taskInput" placeholder="Enter task">
@@ -146,9 +184,69 @@
                             <button id="addBtn">➕ Add Task</button>
                         </div>
                     </div>
+<<<<<<< HEAD
                     
                     <div class="task-list"></div>
                 </div>
+=======
+
+                    <div class="task-list"></div>
+                </div>
+                <!-- Add this after your other sections (before closing maincontent) -->
+                <div id="affirmationsSection" style="display:none;">
+                    <h1>✨ Daily Affirmations</h1>
+
+                    <div class="affirmation-card">
+                        <div class="affirmation-icon">🌟</div>
+                        <div id="affirmationText" class="affirmation-text">
+                            "I am capable of achieving great things today."
+                        </div>
+                        <div id="affirmationAuthor" class="affirmation-author">- Unknown</div>
+
+                        <div class="affirmation-controls">
+                            <button onclick="getNewAffirmation()" class="affirmation-btn">
+                                🔄 New Affirmation
+                            </button>
+                            <button onclick="copyAffirmation()" class="affirmation-btn">
+                                📋 Copy
+                            </button>
+                            <button onclick="saveFavoriteAffirmation()" class="affirmation-btn">
+                                ❤️ Favorite
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="affirmation-categories">
+                        <button class="category-btn active" onclick="filterAffirmations('all')">All</button>
+                        <button class="category-btn" onclick="filterAffirmations('morning')">🌅 Morning</button>
+                        <button class="category-btn" onclick="filterAffirmations('confidence')">💪 Confidence</button>
+                        <button class="category-btn" onclick="filterAffirmations('calm')">🧘 Calm</button>
+                        <button class="category-btn" onclick="filterAffirmations('success')">🏆 Success</button>
+                    </div>
+
+                    <!-- Favorite Affirmations -->
+                    <div class="favorites-section">
+                        <h3>❤️ Your Favorite Affirmations</h3>
+                        <div id="favoritesList" class="favorites-list">
+                            <!-- Favorites will appear here -->
+                        </div>
+                    </div>
+
+                    <!-- Daily Reminder Toggle -->
+                    <div class="reminder-setting">
+                        <label>
+                            <input type="checkbox" id="reminderCheckbox" onchange="toggleReminder()">
+                            🔔 Show affirmation every morning
+                        </label>
+                        <select id="reminderTime" onchange="setReminderTime()">
+                            <option value="8:00">8:00 AM</option>
+                            <option value="9:00">9:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                        </select>
+                    </div>
+                </div>
+>>>>>>> d4d9fd7 (Changes)
 
                 <!-- ================= WEATHER ================= -->
                 <div id="weatherSection" style="display:none;">
@@ -172,6 +270,7 @@
                 </div>
 
                 <!-- ================= POMODORO TIMER ================= -->
+<<<<<<< HEAD
 <div id="pomodoroSection" style="display:none;">
     <h1>🍅 Pomodoro Timer</h1>
     <div class="pomodoro-card">
@@ -235,6 +334,71 @@
         <p id="timerStatus" class="timer-status">Ready to focus! 🎯</p>
     </div>
 </div>
+=======
+                <div id="pomodoroSection" style="display:none;">
+                    <h1>🍅 Pomodoro Timer</h1>
+                    <div class="pomodoro-card">
+                        <!-- Session Type -->
+                        <div class="timer-mode-badge" id="sessionType">Work Session</div>
+
+                        <!-- Progress Bar -->
+                        <div class="pomodoro-progress">
+                            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                        </div>
+
+                        <!-- Timer Display -->
+                        <div class="timer-display" id="timer">25:00</div>
+
+                        <!-- Timer Controls -->
+                        <div class="timer-controls">
+                            <button id="startTimer" class="start-btn">▶ Start</button>
+                            <button id="pauseTimer" class="pause-btn">⏸ Pause</button>
+                            <button id="resetTimer" class="reset-btn">↺ Reset</button>
+                        </div>
+
+                        <!-- Timer Modes -->
+                        <div class="timer-modes">
+                            <button class="mode-btn active" data-mode="pomodoro">🍅 Work</button>
+                            <button class="mode-btn" data-mode="short">☕ Short Break</button>
+                            <button class="mode-btn" data-mode="long">🌙 Long Break</button>
+                        </div>
+
+                        <!-- Task Selection -->
+                        <div class="task-selector">
+                            <label for="pomodoroTaskSelect">📋 Select a Task (Optional)</label>
+                            <select id="pomodoroTaskSelect" class="task-dropdown">
+                                <option value="">No task selected</option>
+                                <!-- Tasks will be populated here from your task list -->
+                            </select>
+                        </div>
+
+                        <!-- Current Focus -->
+                        <div id="currentFocus" class="current-focus" style="display: none;">
+                            <span>Focusing on:</span>
+                            <strong id="selectedTaskName"></strong>
+                        </div>
+
+                        <!-- Pomodoro Stats -->
+                        <div class="pomodoro-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Today</div>
+                                <div class="stat-value" id="todayPomodoros">0</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Week</div>
+                                <div class="stat-value" id="weekPomodoros">0</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Total</div>
+                                <div class="stat-value" id="totalPomodoros">0</div>
+                            </div>
+                        </div>
+
+                        <!-- Timer Status Message -->
+                        <p id="timerStatus" class="timer-status">Ready to focus! 🎯</p>
+                    </div>
+                </div>
+>>>>>>> d4d9fd7 (Changes)
 
                 <!-- ================= SETTINGS ================= -->
                 <div id="settingsSection" style="display:none;">
@@ -245,13 +409,21 @@
                             <input type="checkbox" id="darkModeSetting">
                             Enable Dark Mode
                         </label>
+<<<<<<< HEAD
                         
+=======
+
+>>>>>>> d4d9fd7 (Changes)
                         <h3>Dashboard</h3>
                         <label>
                             Auto Refresh (seconds):
                             <input type="number" id="refreshSetting" value="30" min="5" max="300">
                         </label>
+<<<<<<< HEAD
                         
+=======
+
+>>>>>>> d4d9fd7 (Changes)
                         <button onclick="saveSettings()">💾 Save Settings</button>
                     </div>
                 </div>
@@ -292,6 +464,7 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
             </div>  <!-- Close maincontent -->
         </div>  <!-- Close main -->
@@ -301,3 +474,13 @@
 </body>
 </html>
 >>>>>>> main
+=======
+            </div> <!-- Close maincontent -->
+        </div> <!-- Close main -->
+    </div> <!-- Close wrapper -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+>>>>>>> d4d9fd7 (Changes)

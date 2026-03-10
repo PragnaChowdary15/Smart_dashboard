@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 body {
   margin: 0;
@@ -198,6 +199,8 @@ body.dark .task-list div {
 }
 =======
 
+=======
+>>>>>>> d4d9fd7 (Changes)
 :root {
     /* Colors */
     --color-primary: #667eea;
@@ -206,7 +209,11 @@ body.dark .task-list div {
     --color-warning: #f59e0b;
     --color-danger: #ef4444;
     --color-info: #3b82f6;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> d4d9fd7 (Changes)
     /* Light Mode */
     --bg-primary: #ffffff;
     --bg-secondary: #f0f2f5;
@@ -215,7 +222,11 @@ body.dark .task-list div {
     --text-secondary: #666666;
     --text-light: #999999;
     --border-color: #e0e0e0;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> d4d9fd7 (Changes)
     /* Dark Mode */
     --bg-dark-primary: #1a1a1a;
     --bg-dark-secondary: #2d2d2d;
@@ -223,7 +234,11 @@ body.dark .task-list div {
     --text-dark-primary: #ffffff;
     --text-dark-secondary: #ddd;
     --border-dark-color: #444444;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> d4d9fd7 (Changes)
     /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -231,30 +246,45 @@ body.dark .task-list div {
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
     --spacing-2xl: 2.5rem;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> d4d9fd7 (Changes)
     /* Border Radius */
     --radius-sm: 0.375rem;
     --radius-md: 0.5rem;
     --radius-lg: 0.75rem;
     --radius-xl: 1rem;
     --radius-2xl: 1.5rem;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> d4d9fd7 (Changes)
     /* Shadows */
     --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 2px 10px rgba(0, 0, 0, 0.05);
     --shadow-lg: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 40px -10px rgba(59, 130, 246, 0.15);
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> d4d9fd7 (Changes)
     /* Transitions */
     --transition-fast: 0.15s ease;
     --transition-base: 0.3s ease;
     --transition-slow: 0.5s ease;
+<<<<<<< HEAD
     
     /* Breakpoints */
     --bp-sm: 640px;
     --bp-md: 768px;
     --bp-lg: 1024px;
     --bp-xl: 1280px;
+=======
+>>>>>>> d4d9fd7 (Changes)
 }
 
 * {
@@ -372,10 +402,13 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+<<<<<<< HEAD
 #darkToggle:active {
     transform: translateY(0);
 }
 
+=======
+>>>>>>> d4d9fd7 (Changes)
 /* Main Content */
 .maincontent {
     background: var(--bg-primary);
@@ -401,7 +434,12 @@ h3 {
     font-weight: 600;
 }
 
+<<<<<<< HEAD
 #count, #stats {
+=======
+#count,
+#stats {
+>>>>>>> d4d9fd7 (Changes)
     color: var(--text-secondary);
     margin: var(--spacing-md) 0;
     font-size: clamp(0.9rem, 1.5vw, 1.1rem);
@@ -426,6 +464,7 @@ h3 {
     border-radius: var(--radius-xl);
 }
 
+<<<<<<< HEAD
 /* ===================== CHART BOX ===================== */
 .chart-box {
     max-width: 500px;
@@ -447,6 +486,8 @@ h3 {
     height: auto;
 }
 
+=======
+>>>>>>> d4d9fd7 (Changes)
 /* ===================== SEARCH INPUT ===================== */
 #search {
     width: 100%;
@@ -466,10 +507,13 @@ h3 {
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
+<<<<<<< HEAD
 #search::placeholder {
     color: var(--text-light);
 }
 
+=======
+>>>>>>> d4d9fd7 (Changes)
 /* ===================== FILTERS ===================== */
 .filters {
     display: flex;
@@ -494,6 +538,7 @@ h3 {
 .filters button:hover {
     background: var(--color-primary);
     color: white;
+<<<<<<< HEAD
     border-color: var(--color-primary);
     transform: translateY(-2px);
 }
@@ -502,6 +547,11 @@ h3 {
     transform: translateY(0);
 }
 
+=======
+    transform: translateY(-2px);
+}
+
+>>>>>>> d4d9fd7 (Changes)
 /* ===================== TASK INPUT CARD ===================== */
 .task-input-card {
     background: var(--bg-tertiary);
@@ -515,11 +565,14 @@ h3 {
     transition: all var(--transition-base);
 }
 
+<<<<<<< HEAD
 .task-input-card:focus-within {
     border-color: var(--color-primary);
     box-shadow: var(--shadow-lg);
 }
 
+=======
+>>>>>>> d4d9fd7 (Changes)
 #taskInput,
 #priority,
 #dueDate {
@@ -543,6 +596,7 @@ h3 {
     min-width: 100px;
 }
 
+<<<<<<< HEAD
 #taskInput:focus,
 #priority:focus,
 #dueDate:focus {
@@ -551,6 +605,8 @@ h3 {
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
+=======
+>>>>>>> d4d9fd7 (Changes)
 #addBtn {
     padding: var(--spacing-md) var(--spacing-xl);
     background: var(--color-primary);
@@ -569,10 +625,13 @@ h3 {
     box-shadow: var(--shadow-lg);
 }
 
+<<<<<<< HEAD
 #addBtn:active {
     transform: translateY(0);
 }
 
+=======
+>>>>>>> d4d9fd7 (Changes)
 /* ===================== TASK LIST ===================== */
 .task-list {
     margin-top: var(--spacing-xl);
@@ -592,11 +651,14 @@ h3 {
     gap: var(--spacing-md);
 }
 
+<<<<<<< HEAD
 .task-list div:hover {
     transform: translateX(5px);
     box-shadow: var(--shadow-md);
 }
 
+=======
+>>>>>>> d4d9fd7 (Changes)
 .task-list div.low {
     border-left-color: var(--color-success);
 }
@@ -609,16 +671,22 @@ h3 {
     border-left-color: var(--color-danger);
 }
 
+<<<<<<< HEAD
 .task-list div.overdue {
     border-left-color: var(--color-danger);
     background: rgba(239, 68, 68, 0.05);
 }
 
+=======
+>>>>>>> d4d9fd7 (Changes)
 .task-list span {
     flex: 1;
     cursor: pointer;
     color: var(--text-primary);
+<<<<<<< HEAD
     user-select: none;
+=======
+>>>>>>> d4d9fd7 (Changes)
 }
 
 .task-list span.completed {
@@ -630,7 +698,11 @@ h3 {
 .task-list button {
     background: none;
     border: none;
+<<<<<<< HEAD
     font-size: 1.2em;
+=======
+    font-size: 1.2rem;
+>>>>>>> d4d9fd7 (Changes)
     cursor: pointer;
     padding: var(--spacing-xs) var(--spacing-sm);
     opacity: 0.5;
@@ -641,6 +713,7 @@ h3 {
     opacity: 1;
 }
 
+<<<<<<< HEAD
 /* ===================== WEATHER SECTION ===================== */
 .weather-card {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
@@ -1526,11 +1599,15 @@ body.dark ::-webkit-scrollbar-track {
 }
 
 /* ===== POMODORO TIMER SECTION ===== */
+=======
+/* ===================== POMODORO TIMER ===================== */
+>>>>>>> d4d9fd7 (Changes)
 #pomodoroSection {
     padding: 15px;
     animation: fadeIn 0.5s ease;
 }
 
+<<<<<<< HEAD
 #pomodoroSection h1 {
     font-size: 1.8rem;  /* Reduced from 2rem */
     font-weight: 700;
@@ -1572,12 +1649,29 @@ body.dark ::-webkit-scrollbar-track {
     font-weight: 700;
     text-align: center;
     color: #0f172a;
+=======
+.pomodoro-card {
+    max-width: 450px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 30px;
+    padding: 25px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid #f1f5f9;
+}
+
+.timer-display {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+>>>>>>> d4d9fd7 (Changes)
     margin: 10px 0;
     font-family: 'Inter', monospace;
     letter-spacing: 3px;
     background: linear-gradient(135deg, #f97316, #ef4444);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+<<<<<<< HEAD
     position: relative;
     padding: 5px;
 }
@@ -1594,6 +1688,10 @@ body.dark ::-webkit-scrollbar-track {
 }
 
 /* ===== TIMER CONTROLS ===== */
+=======
+}
+
+>>>>>>> d4d9fd7 (Changes)
 .timer-controls {
     display: flex;
     justify-content: center;
@@ -1602,6 +1700,7 @@ body.dark ::-webkit-scrollbar-track {
 }
 
 .timer-controls button {
+<<<<<<< HEAD
     padding: 10px 20px;  /* Smaller padding */
     border: none;
     border-radius: 30px;
@@ -1613,6 +1712,15 @@ body.dark ::-webkit-scrollbar-track {
     align-items: center;
     justify-content: center;
     gap: 5px;
+=======
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+>>>>>>> d4d9fd7 (Changes)
     min-width: 70px;
 }
 
@@ -1631,12 +1739,15 @@ body.dark ::-webkit-scrollbar-track {
     color: white;
 }
 
+<<<<<<< HEAD
 .timer-controls button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 15px -5px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== TIMER MODES ===== */
+=======
+>>>>>>> d4d9fd7 (Changes)
 .timer-modes {
     display: flex;
     justify-content: center;
@@ -1649,11 +1760,16 @@ body.dark ::-webkit-scrollbar-track {
 
 .mode-btn {
     flex: 1;
+<<<<<<< HEAD
     padding: 8px 12px;  /* Smaller padding */
+=======
+    padding: 8px 12px;
+>>>>>>> d4d9fd7 (Changes)
     border: none;
     border-radius: 30px;
     cursor: pointer;
     font-weight: 500;
+<<<<<<< HEAD
     font-size: 0.85rem;  /* Smaller font */
     transition: all 0.2s ease;
     background: transparent;
@@ -1662,6 +1778,12 @@ body.dark ::-webkit-scrollbar-track {
     align-items: center;
     justify-content: center;
     gap: 4px;
+=======
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background: transparent;
+    color: #64748b;
+>>>>>>> d4d9fd7 (Changes)
 }
 
 .mode-btn.active {
@@ -1670,6 +1792,7 @@ body.dark ::-webkit-scrollbar-track {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+<<<<<<< HEAD
 /* ===== TASK SELECTOR ===== */
 .task-selector {
     margin: 20px 0;
@@ -1712,6 +1835,8 @@ body.dark ::-webkit-scrollbar-track {
 }
 
 /* ===== POMODORO STATS ===== */
+=======
+>>>>>>> d4d9fd7 (Changes)
 .pomodoro-stats {
     margin-top: 20px;
     padding-top: 15px;
@@ -1721,6 +1846,7 @@ body.dark ::-webkit-scrollbar-track {
     gap: 10px;
 }
 
+<<<<<<< HEAD
 .stat-item {
     text-align: center;
 }
@@ -1735,11 +1861,16 @@ body.dark ::-webkit-scrollbar-track {
 
 .stat-value {
     font-size: 1.2rem;  /* Smaller */
+=======
+.stat-value {
+    font-size: 1.2rem;
+>>>>>>> d4d9fd7 (Changes)
     font-weight: 600;
     color: #f97316;
     background: #fff7ed;
     padding: 4px 12px;
     border-radius: 30px;
+<<<<<<< HEAD
     min-width: 50px;
 }
 
@@ -1759,6 +1890,13 @@ body.dark ::-webkit-scrollbar-track {
 .pomodoro-progress {
     width: 100%;
     height: 6px;  /* Thinner */
+=======
+}
+
+.pomodoro-progress {
+    width: 100%;
+    height: 6px;
+>>>>>>> d4d9fd7 (Changes)
     background: #f1f5f9;
     border-radius: 20px;
     margin: 15px 0;
@@ -1773,18 +1911,245 @@ body.dark ::-webkit-scrollbar-track {
     transition: width 0.3s linear;
 }
 
+<<<<<<< HEAD
 /* ===== ANIMATIONS ===== */
+=======
+/* ===================== WEATHER SECTION ===================== */
+.weather-card {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-2xl);
+    max-width: 500px;
+    margin: var(--spacing-xl) auto;
+    box-shadow: var(--shadow-lg);
+}
+
+#cityInput {
+    width: 100%;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#getWeatherBtn {
+    width: 100%;
+    padding: var(--spacing-md);
+    background: white;
+    color: var(--color-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ===================== NOTES SECTION ===================== */
+.notes-card {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    max-width: 500px;
+    margin: var(--spacing-xl) auto;
+}
+
+#noteInput {
+    width: 100%;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+#addNoteBtn {
+    width: 100%;
+    padding: var(--spacing-md);
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.note-item {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffe599 100%);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    margin: var(--spacing-md) 0;
+    border-left: 4px solid #ffc107;
+    color: #333;
+}
+
+/* ===================== SETTINGS SECTION ===================== */
+.settings-card {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    max-width: 500px;
+    margin: var(--spacing-xl) auto;
+}
+
+.settings-card button {
+    width: 100%;
+    padding: var(--spacing-md);
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: var(--spacing-xl);
+}
+
+/* ===================== ANALYTICS SECTION ===================== */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.analytics-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.score-display {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 800;
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===================== DARK MODE ===================== */
+body.dark {
+    background: var(--bg-dark-primary);
+    color: var(--text-dark-primary);
+}
+
+body.dark .sidebar {
+    background: var(--bg-dark-secondary);
+}
+
+body.dark .maincontent,
+body.dark .topbar,
+body.dark .task-list div,
+body.dark .analytics-card {
+    background: var(--bg-dark-secondary);
+    color: var(--text-dark-primary);
+}
+
+body.dark .task-input-card,
+body.dark .notes-card,
+body.dark .settings-card,
+body.dark .chart-box {
+    background: var(--bg-dark-tertiary);
+}
+
+body.dark input,
+body.dark select,
+body.dark #search {
+    background: var(--bg-dark-tertiary);
+    border-color: var(--border-dark-color);
+    color: var(--text-dark-primary);
+}
+
+body.dark .filters button {
+    background: var(--bg-dark-tertiary);
+    color: var(--text-dark-primary);
+}
+
+body.dark .pomodoro-card {
+    background: var(--bg-dark-secondary);
+    border-color: var(--border-dark-color);
+}
+
+body.dark .mode-btn.active {
+    background: var(--bg-dark-tertiary);
+}
+
+body.dark .stat-value {
+    background: var(--bg-dark-tertiary);
+}
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-height: 80px;
+        overflow-x: auto;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+    }
+
+    .sidebar ul {
+        display: flex;
+        gap: var(--spacing-md);
+    }
+
+    .main {
+        margin-top: 90px;
+    }
+
+    .task-input-card {
+        flex-direction: column;
+    }
+
+    #taskInput,
+    #priority,
+    #dueDate,
+    #addBtn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .timer-display {
+        font-size: 2.8rem;
+    }
+
+    .timer-controls {
+        flex-wrap: wrap;
+    }
+}
+
+/* ===================== ANIMATIONS ===================== */
+>>>>>>> d4d9fd7 (Changes)
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(10px);
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> d4d9fd7 (Changes)
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+<<<<<<< HEAD
 /* ===== DARK MODE STYLES ===== */
 body.dark .pomodoro-card {
     background: #1e293b;
@@ -1850,3 +2215,427 @@ body.dark .pomodoro-progress {
     }
 }
 >>>>>>> main
+=======
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-dark);
+}
+
+.chart-box {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    /* Increased from 300px */
+    box-shadow: var(--shadow-sm);
+}
+
+.chart-box .chartjs-legend {
+    font-size: 14px !important;
+}
+
+.chart-box .chartjs-legend li {
+    padding: 5px 10px !important;
+}
+
+#taskChart {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 350px;
+    /* Increased from 250px */
+    max-height: 250px;
+    /* Increased from 150px */
+    margin: 0 auto;
+}
+
+/* Optional: If you want an even smaller chart on mobile */
+@media (max-width: 768px) {
+    .chart-box {
+        max-width: 300px;
+        padding: 10px;
+    }
+
+    #taskChart {
+        max-height: 150px;
+        max-width: 200px;
+    }
+}
+
+/* Add to your CSS file */
+
+/* Affirmation Card */
+.affirmation-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    border-radius: 30px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.affirmation-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.affirmation-text {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+}
+
+.affirmation-author {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.affirmation-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.affirmation-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.affirmation-btn:hover {
+    background: white;
+    color: #667eea;
+    transform: translateY(-2px);
+}
+
+/* Categories */
+.affirmation-categories {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.category-btn {
+    padding: 8px 16px;
+    border: 2px solid #667eea;
+    background: transparent;
+    color: var(--text-primary);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.category-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Favorites Section */
+.favorites-section {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: var(--bg-tertiary);
+    border-radius: 20px;
+}
+
+.favorites-section h3 {
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.favorites-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.favorite-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: var(--bg-primary);
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    animation: slideIn 0.3s ease;
+}
+
+.favorite-item span {
+    flex: 1;
+    color: var(--text-primary);
+}
+
+.favorite-item button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    margin-left: 10px;
+}
+
+.favorite-item button:hover {
+    opacity: 1;
+}
+
+/* Reminder Setting */
+.reminder-setting {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--bg-tertiary);
+    border-radius: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.reminder-setting select {
+    padding: 8px 15px;
+    border: 2px solid #667eea;
+    border-radius: 30px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Dark mode support */
+body.dark .affirmation-card {
+    background: linear-gradient(135deg, #4c51bf 0%, #6b46c1 100%);
+}
+
+body.dark .favorite-item {
+    background: var(--bg-dark-tertiary);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===================== CALENDAR STYLES ===================== */
+.calendar-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.calendar-header button {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all var(--transition-base);
+}
+
+.calendar-header button:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+.calendar-header h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Calendar Grid - THIS IS THE KEY PART */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* 7 columns for days of week */
+    gap: 8px;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Day names */
+.calendar-grid::before {
+    content: "Sun Mon Tue Wed Thu Fri Sat";
+    display: contents;
+    /* This makes the day names part of the grid */
+}
+
+/* Add day names as separate elements */
+.calendar-day-name {
+    text-align: center;
+    font-weight: 600;
+    padding: var(--spacing-sm);
+    color: var(--text-secondary);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+}
+
+/* Calendar days */
+.calendar-day {
+    aspect-ratio: 1;
+    /* Makes days square */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    padding: var(--spacing-sm);
+    position: relative;
+    min-height: 60px;
+}
+
+.calendar-day:hover:not(.empty) {
+    background: var(--color-primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+.calendar-day.empty {
+    background: transparent;
+    cursor: default;
+}
+
+.calendar-day.today {
+    background: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    border: 2px solid var(--color-primary-dark);
+}
+
+.day-number {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.task-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: var(--color-danger);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Calendar Tasks List */
+.calendar-tasks {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+}
+
+.calendar-tasks h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.calendar-task-item {
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin: var(--spacing-xs) 0;
+    background: var(--bg-primary);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-primary);
+}
+
+.calendar-task-item.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    border-left-color: var(--color-success);
+}
+
+/* Dark mode support */
+body.dark .calendar-day {
+    background: var(--bg-dark-tertiary);
+    color: var(--text-dark-primary);
+}
+
+body.dark .calendar-day.empty {
+    background: transparent;
+}
+
+body.dark .calendar-tasks {
+    background: var(--bg-dark-secondary);
+}
+
+body.dark .calendar-task-item {
+    background: var(--bg-dark-tertiary);
+    color: var(--text-dark-primary);
+}
+>>>>>>> d4d9fd7 (Changes)

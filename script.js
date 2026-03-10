@@ -145,7 +145,6 @@ input.addEventListener("keypress", function (e) {
 function showAll() {
   document.querySelectorAll(".task-list div").forEach(t => t.style.display = "flex");
 }
-=======
 const noteInput = document.getElementById("noteInput");
 const addNoteBtn = document.getElementById("addNoteBtn");
 const notesList = document.getElementById("notesList");
@@ -561,6 +560,7 @@ const DashboardApp = {
   }
 };
 
+
 // ========== GLOBAL FUNCTIONS (for HTML onclick) ==========
 function showSection(sectionId) {
   const sections = document.querySelectorAll(".maincontent > div");
@@ -592,10 +592,6 @@ function showCompleted() {
     task.style.display = isDone ? "flex" : "none";
   });
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 function showPending() {
   document.querySelectorAll(".task-list div").forEach(task => {
     const isDone = task.querySelector("span").classList.contains("completed");
@@ -603,7 +599,6 @@ function showPending() {
   });
 }
 
-<<<<<<< HEAD
 // -------- OVERDUE --------
 function checkOverdue(taskItem, date) {
   const today = new Date().toISOString().split("T")[0];
@@ -631,31 +626,6 @@ document.getElementById("search").addEventListener("input", function () {
     task.style.display = text.includes(value) ? "flex" : "none";
   });
 });
-=======
-function saveSettings() {
-  DashboardApp.state.settings.darkMode = document.getElementById("darkModeSetting").checked;
-  DashboardApp.state.settings.refreshInterval = parseInt(document.getElementById("refreshSetting").value);
-  
-  DashboardApp.storage.saveSettings();
-  DashboardApp.applySettings();
-  alert("Settings Saved!");
-}
-
-// ========== INITIALIZE THE APP ==========
-// Check login first
-if (localStorage.getItem("isLoggedIn") !== "true") {
-  window.location.href = "login.html";
-} else {
-  // Make sure DOM is fully loaded before initializing
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => DashboardApp.init());
-  } else {
-    DashboardApp.init();
-  }
-}
-
-// ========== PASTE POMODORO CODE HERE ==========
-// ===== POMODORO TIMER =====
 const PomodoroTimer = {
   // Timer state
   state: {
@@ -1007,6 +977,7 @@ const PomodoroTimer = {
     } else if (Notification.permission !== 'denied') {
       Notification.requestPermission();
     }
+<<<<<<< HEAD
   },
   
   // Auto-save every minute
@@ -1032,4 +1003,141 @@ function watchTaskChanges() {
   
   observer.observe(taskList, { childList: true, subtree: true });
 }
->>>>>>> main
+  }
+};
+
+// ========== GLOBAL FUNCTIONS (for HTML onclick) ==========
+function showSection(sectionId) {
+  const sections = document.querySelectorAll(".maincontent > div");
+  sections.forEach(section => {
+    section.style.display = "none";
+  });
+
+  const activeSection = document.getElementById(sectionId);
+  if (activeSection) {
+    activeSection.style.display = "block";
+
+    // Update Pomodoro when showing its section
+    if (sectionId === "pomodoroSection" && typeof PomodoroTimer !== 'undefined') {
+      setTimeout(() => {
+        PomodoroTimer.populateTaskDropdown();
+      }, 100);
+    }
+
+    // Update Calendar when showing its section
+    if (sectionId === "calendarSection" && typeof Calendar !== 'undefined') {
+      Calendar.render();
+    }
+
+    // Update Analytics when showing its section
+    if (sectionId === "analyticsSection" && typeof Analytics !== 'undefined') {
+      Analytics.updateAllCharts();
+    }
+  }
+}
+
+function showAll() {
+  document.querySelectorAll(".task-list div").forEach(t => t.style.display = "flex");
+}
+
+function showCompleted() {
+  document.querySelectorAll(".task-list div").forEach(task => {
+    const isDone = task.querySelector("span").classList.contains("completed");
+    task.style.display = isDone ? "flex" : "none";
+  });
+}
+
+function showPending() {
+  document.querySelectorAll(".task-list div").forEach(task => {
+    const isDone = task.querySelector("span").classList.contains("completed");
+    task.style.display = isDone ? "none" : "flex";
+  });
+}
+
+function saveSettings() {
+  const darkModeSetting = document.getElementById("darkModeSetting");
+  const refreshSetting = document.getElementById("refreshSetting");
+
+  DashboardApp.state.settings.darkMode = darkModeSetting ? darkModeSetting.checked : false;
+  DashboardApp.state.settings.refreshInterval = refreshSetting ? parseInt(refreshSetting.value) : 30;
+
+  DashboardApp.storage.saveSettings();
+  DashboardApp.applySettings();
+  alert("Settings Saved!");
+}
+
+// Affirmations global functions
+function getNewAffirmation() {
+  Affirmations.showNew();
+}
+
+function copyAffirmation() {
+  const text = document.getElementById('affirmationText').textContent;
+  const author = document.getElementById('affirmationAuthor').textContent;
+  navigator.clipboard.writeText(`${text} ${author}`);
+  showNotification('Copied to clipboard! 📋');
+}
+
+function saveFavoriteAffirmation() {
+  Affirmations.saveFavorite();
+}
+
+function filterAffirmations(category) {
+  Affirmations.currentCategory = category;
+
+  // Update active button
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
+
+  Affirmations.showNew();
+}
+
+function useFavoriteAffirmation(index) {
+  const favorites = JSON.parse(localStorage.getItem('favoriteAffirmations') || '[]');
+  const aff = favorites[index];
+  if (aff) {
+    document.getElementById('affirmationText').textContent = `"${aff.text}"`;
+    document.getElementById('affirmationAuthor').textContent = `- ${aff.author}`;
+    Affirmations.currentAffirmation = aff;
+  }
+}
+
+function removeFavoriteAffirmation(index) {
+  const favorites = JSON.parse(localStorage.getItem('favoriteAffirmations') || '[]');
+  favorites.splice(index, 1);
+  localStorage.setItem('favoriteAffirmations', JSON.stringify(favorites));
+  Affirmations.loadFavorites();
+}
+
+function toggleReminder() {
+  const enabled = document.getElementById('reminderCheckbox').checked;
+  const time = document.getElementById('reminderTime').value;
+
+  localStorage.setItem('affirmationReminder', JSON.stringify({
+    enabled: enabled,
+    time: time
+  }));
+
+  if (enabled) {
+    showNotification(`Reminder set for ${time} daily ⏰`);
+  } else {
+    showNotification('Reminder turned off');
+  }
+}
+
+function setReminderTime() {
+  if (document.getElementById('reminderCheckbox').checked) {
+    toggleReminder();
+  }
+}
+
+// ========== INITIALIZE THE APP ==========
+// Make sure DOM is fully loaded before initializing
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => DashboardApp.init());
+} else {
+  DashboardApp.init();
+}
+>>>>>>> d4d9fd7 (Changes)
